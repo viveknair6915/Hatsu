@@ -1,7 +1,40 @@
 # PolygonMigration
 
+## User Flow Walkthrough & UI Screenshots
+
+Below is the step-by-step migration flow of problem `69927` ("A+B") from Codeforces Polygon into the PostgreSQL database and cloud/local storage:
+
+### Step 1: Review Fetched Problem & Statement
+After entering the Polygon Problem ID (`69927`) and clicking **Fetch Problem**, the tool retrieves and renders the complete statement, input format, output format, sample cases, and notes.
+
+![Image 1 - Problem Statement](Screenshots/image%201.png)
+
+---
+
+### Step 2: Migrate Problem Metadata to Database
+Select difficulty (`Medium`), assign at least two tags (`math`, `string`), and click **Create/Update problem in Database**. The problem record is created in PostgreSQL with an auto-assigned Database Problem ID (`1`) and an Algopath link (`https://www.algopath.ai/problems/ab`).
+
+![Image 2 - Migrate Problem to Database](Screenshots/image%202.png)
+
+---
+
+### Step 3: Migrate Test Cases to Database
+Click **Migrate Test Cases to DB** to synchronize all 12 test cases into the PostgreSQL database without character truncation.
+
+![Image 3 - Migrating Test Cases to Database](Screenshots/image%203.png)
+
+---
+
+### Step 4: Upload Test Cases to Cloud/Local Storage
+Click **Migrate Test Cases to Azure** (or Storage). The test cases are uploaded and organized cleanly under `test_cases/{problem_id}/{test_number}` and `test_cases/{problem_id}/{test_number}.a`. A green success banner confirms that all 12 test cases have been uploaded.
+
+![Image 4 - Upload Test Cases to Storage](Screenshots/image%204.png)
+
+---
+
 ## Overview
 PolygonMigration is a Django-based web application designed to facilitate the migration of programming problems and their test cases from the [Polygon](https://polygon.codeforces.com/) platform to a local database and Azure Blob Storage. It provides a user-friendly interface for staff users to fetch, review, tag, and migrate problems, as well as manage test cases and metadata.
+
 
 ## Features
 - **Polygon Integration:** Fetch problems and test cases directly from Polygon using API keys.
