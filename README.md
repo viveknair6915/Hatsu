@@ -1,6 +1,14 @@
 # PolygonMigration
 
+## Video Walkthrough
+Watch the complete end-to-end walkthrough video demonstrating system setup, problem fetching from Polygon, database migration, and storage upload verification:
+
+🔗 **[Watch Walkthrough Demo Video on Loom](https://www.loom.com/share/41c8bc18f39841aeadc8764368177899)**
+
+---
+
 ## User Flow Walkthrough & UI Screenshots
+
 
 Below is the step-by-step migration flow of problem `69927` ("A+B") from Codeforces Polygon into the PostgreSQL database and cloud/local storage:
 
